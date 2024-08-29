@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { ThemeProvider } from "styled-components";
+import GlobalStyles from "./styles/GlobalStyles";
+import theme from "./styles/theme";
+import Header from "./components/Header";
+import HeroSection from "../src/components/HeroSection";
+import FeaturesSection from "./components/FeaturesSection";
+import BenefitsSection from "./components/BenefitsSection";
+import PricingSection from "./components/PricingSection";
+import TestimonialsSection from "./components/TestmonialsSection";
+import Footer from "./components/Footer";
+import FloatingWhatsApp from "./components/FloatingWhatssap";
+import "./index.css";
+import SpecialOffer from "./SpecialOffer";
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Header />
+      <HeroSection />
+      <GlobalStyles />
+
+      <FeaturesSection />
+      <BenefitsSection />
+      <PricingSection />
+      <TestimonialsSection />
+      <SpecialOffer />
+      <Footer />
+      <FloatingWhatsApp />
+    </ThemeProvider>
   );
-}
+};
 
 export default App;
